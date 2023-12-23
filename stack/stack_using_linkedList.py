@@ -1,46 +1,43 @@
 class Node:
-    def __init__(self, value) -> None:
-        self.value = value
+    def __init__(self, data):
+        self.data = data
         self.next = None
-        
-class Stack:
-    
-    def __init__(self):
-        self.head = None
-        
-    def __str__(self):
-        if self.head is None:
-            return "stack []"
-        else:
-            name = ''
-            current = self.head
-            while current:
-                name += f" {current.value} -->"
-                current = current.next
-            return name[:-3]
-            
-        
-    def push(self , value):
-        new_node = Node(value)
-        new_node.next = self.head
-        self.head = new_node
-        
-            
-    def pop(self):
-        if self.head is None:
-            return "stack is empty"
-        else:
-            self.head = self.head.next
-    
-    def peek(self):
-        return self.head.value if self.head is not None else "stack is empty"
-    
-stack = Stack()
-stack.push(1)
-stack.push(2)
-stack.push(3)
 
-print(stack)
-stack.pop()
-print(stack)  
-print("Peek:", stack.peek())  
+class StackLinkedList:
+    def __init__(self):
+        self.top = None
+
+    def push(self, data):
+        new_node = Node(data)
+        new_node.next = self.top
+        self.top = new_node
+
+    def pop(self):
+        if self.is_empty():
+            print("Stack underflow error. Cannot pop.")
+            return None
+        popped_data = self.top.data
+        self.top = self.top.next
+        return popped_data
+
+    def peek(self):
+        if self.is_empty():
+            print("Stack is empty. Cannot peek.")
+            return None
+        return self.top.data
+
+    def is_empty(self):
+        return self.top is None
+
+my_stack = StackLinkedList()
+
+my_stack.push(1)
+my_stack.push(2)
+my_stack.push(3)
+
+print("Top of the stack:", my_stack.peek())
+
+popped_item = my_stack.pop()
+print("Popped item:", popped_item)
+
+print("Is stack empty?", my_stack.is_empty())

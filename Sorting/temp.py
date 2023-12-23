@@ -1,5 +1,5 @@
 """bubble sort"""
-'''def bubblesort(arr):
+"""def bubblesort(arr):
     for i in range(len(arr) -1):
         for j in range(len(arr) - i - 1):
             if arr[j] > arr[j+1]:
@@ -10,11 +10,11 @@
 arr = [4,6,7,3,4,63,3,56,76,33,56,66,55]
 bubblesort(arr)
 print(arr)
-print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")'''
+print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")"""
 
 """quicksort"""
 
-'''def quicksort(arr,left,right):
+"""def quicksort(arr,left,right):
     if left < right:
         partision_pos = partision(arr,left, right)
         quicksort(arr, partision_pos+1, right)
@@ -46,11 +46,11 @@ def partision(arr, left, right):
 
 arr = [4,6,7,3,4,63,3,56,76,33,56,66,55]
 quicksort(arr, 0 , len(arr) - 1)
-print(arr)'''
+print(arr)"""
 print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
 
-'''def merge_sort(arr):
+"""def merge_sort(arr):
     if len(arr) > 1:
         left = arr[:len(arr)//2]
         right = arr[len(arr)//2:]
@@ -93,9 +93,9 @@ print("Sorted array1:", array1)
 print("Sorted array2:", array2)
 print("Sorted array3:", array3)
 print("Sorted array4:", array4)
-'''
-    
-    
+"""
+
+
 """def selection_sort(arr):
     for i in range(len(arr)-1):
         min_index = i
@@ -121,24 +121,4 @@ print("Sorted array2:", array2)
 print("Sorted array3:", array3)
 print("Sorted array4:", array4)"""
 
-def insertion_sort(arr):
-    for i in range(1,len(arr)):
-        j = i 
-        while arr[j] < arr[j-1] and j > 0:
-            arr[j], arr[j-1] = arr[j-1], arr[j]
-            j -= 1
-        
-array1 = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
-array2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-array3 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-array4 = [5, 2, 7, 5, 8, 4, 1, 2, 5, 3]
 
-insertion_sort(array1)
-insertion_sort(array2)
-insertion_sort(array3)
-insertion_sort(array4)
-
-print("Sorted array1:", array1)
-print("Sorted array2:", array2)
-print("Sorted array3:", array3)
-print("Sorted array4:", array4)

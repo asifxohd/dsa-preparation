@@ -1,24 +1,28 @@
 """<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  CODE   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"""
 
-def insertionsort(arr):
-    for i in range(1,len(arr)):
-        key = arr[i]
-        
-        j = i-1
-        
-        while j >= 0 and key < arr[j]:
-            arr[j+1] = arr[j]
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        j = i
+        while arr[j] < arr[j - 1] and j > 0:
+            arr[j], arr[j - 1] = arr[j - 1], arr[j]
             j -= 1
-        arr[j+1] = key
-        
-    return arr
 
 
+array1 = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+array2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+array3 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+array4 = [5, 2, 7, 5, 8, 4, 1, 2, 5, 3]
 
+insertion_sort(array1)
+insertion_sort(array2)
+insertion_sort(array3)
+insertion_sort(array4)
 
-arr = [5,7,3,6,34,6,45,64, 4, 2,1,0,-3]
-result = insertionsort(arr)
-print(result)
+print("Sorted array1:", array1)
+print("Sorted array2:", array2)
+print("Sorted array3:", array3)
+print("Sorted array4:", array4)
+
 
 
 """<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  CODE   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"""

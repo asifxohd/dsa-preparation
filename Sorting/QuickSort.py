@@ -25,7 +25,7 @@ def partition(arr,left,right):
     if arr[i] > pivot:
         arr[i], arr[right] = arr[right], arr[i]
     
-    return i
+    return i    
             
     
 
