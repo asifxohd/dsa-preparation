@@ -56,6 +56,10 @@ class HashTable:
                 return current.value
             current = current.next
         raise KeyError("key not found")
+    
+    def __repr__(self):
+        return ', '.join([f'({node.key}, {node.value})' for node in self.table if node is not None])
+
             
             
             
